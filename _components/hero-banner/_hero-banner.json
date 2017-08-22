@@ -4,7 +4,7 @@
   "kss_styles": true,
   "heading_tag": "h3",
   "title": "Hero banner",
-  "teaser": "<p>Bits 'n bobs squiffy morris dancers real ale Geordie on the pull fried toast alright geezer therewith.</p>",
+  "body": "<div class='text'><p>Bits 'n bobs squiffy morris dancers real ale Geordie on the pull fried toast alright geezer therewith.</p></div>",
   "image": "<div class='field-image'><picture class='responsive-media responsive-media--16-9-all'><img src='//unsplash.it/42/23?image=1042' class='responsive-media__placeholder js-media-placeholder' alt=''><source srcset='//unsplash.it/1439/810?image=1042 1x' media='(min-width: 0em)' type='image/jpeg'><img src='//unsplash.it/42/23?image=1042' alt=''></picture></div>",
   "video": "",
   "cta_button": "<a href='https://www.youtube.com/watch?v=BwvzdxI45x8' class='js-mfp-video button button--primary'>Watch the video</a>"
