@@ -1,0 +1,10 @@
+.tabs {
+  @extend %inline-list;
+
+  > li {
+    font-size: $base-font-size;
+
+    &.is-active {
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.menu,
+.inline-list,
+.links.inline {
+  @extend %inline-list;
+
+  > li {
+    position: relative;
+    font-size: $base-font-size;
+  }
+}

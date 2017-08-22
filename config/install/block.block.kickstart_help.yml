@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - kickstart
+_core:
+  default_config_hash: NebgFuxMd5rMb7zqkr6upBz8zOclQ06l98waczI1WSU
+id: kickstart_help
+theme: kickstart
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

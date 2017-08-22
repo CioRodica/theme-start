@@ -1,0 +1,28 @@
+name: Kickstart
+type: theme
+description: FFW kickstart theme.
+base theme: stable
+core: 8.x
+
+libraries:
+  - kickstart/global-styling
+  - kickstart/global-scripts
+  - kickstart/fonts
+
+component-libraries:
+  styleguide:
+    paths:
+      - _components
+  svg:
+      paths:
+        - svg
+
+regions:
+  brand: Brand
+  header: Header
+  content: Content
+  footer: Footer
+
+regions_hidden:
+  - sidebar_first
+  - sidebar_second

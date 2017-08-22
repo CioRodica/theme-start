@@ -1,0 +1,12 @@
+// Icons
+//
+// Markup: _icons.twig
+//
+// Style guide: Base.Icons
+
+.icon {
+  display: inline-block;
+  height: $base-size;
+  width: $base-size;
+  vertical-align: bottom;
+}

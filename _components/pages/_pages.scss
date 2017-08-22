@@ -1,0 +1,36 @@
+.page-title {
+  @include heading-regular;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  padding-bottom: $small-spacing;
+
+  @include mappy-bp(medium) {
+    font-size: 4rem;
+  }
+}
+
+// ============================
+.post {
+  margin-top: $large-spacing;
+  margin-bottom: $large-spacing;
+}
+
+.post__inner {
+  margin: 0 auto;
+}
+
+.post__header {
+  margin-bottom: $base-spacing;
+}
+
+.post__title {
+  @include heading-regular;
+}
+
+.post__meta {
+  color: $secondary-color;
+}
+
+.post__teaser {
+  color: $base-color;
+}

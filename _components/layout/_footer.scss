@@ -1,0 +1,19 @@
+.global__footer {
+  background-color: $footer-background;
+  width: 100%;
+}
+
+.global__footer-inner {
+  @extend %container;
+}
+
+.region--footer {
+  .region__inner {
+    @include flex-row;
+    padding: $small-spacing 0;
+    flex-wrap: wrap;
+  }
+}
+
+// ============================
+.menu--footer {}

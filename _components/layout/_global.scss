@@ -1,0 +1,87 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  // All the REM measurements are based on 10px sizing. So basically 1.5rem = 15px :)
+  font-size: 62.5%;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+.kss-style {
+  @include base-regular;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background-color: $base-background;
+  margin: 0;
+}
+
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+.container {
+  @extend %container;
+}
+
+// Global layout with sticky footer.
+.global {
+  @extend %flex-column;
+  height: 100vh;
+  overflow-y: scroll;
+
+  &.no-yscroll {
+    overflow-y: hidden;
+  }
+}
+
+.global__header-wrap,
+.global__content-wrap {
+  flex: none;
+}
+
+.global__content-wrap {
+  overflow-x: hidden;
+}
+
+.global__footer-wrap {
+  @extend %flex-row;
+  align-items: flex-end;
+}
+
+// Page layout.
+.layout {
+  @extend %flex-row;
+}
+
+.layout__content {
+  @include flex-width(100%);
+  flex-shrink: 1;
+  order: 0;
+}
+
+.layout__sidebar-first {
+  @include mappy-bp(small) {
+    @include flex-width(20%);
+    padding-right: 2%;
+    order: -1;
+  }
+}
+
+.layout__sidebar-second {
+  @include mappy-bp(small) {
+    @include flex-width(20%);
+    padding-left: 2%;
+    order: 1;
+  }
+}

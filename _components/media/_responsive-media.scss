@@ -1,0 +1,54 @@
+.responsive-media {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  background: $secondary-background;
+
+  &--21-9-all {
+    @include responsive-ratio(21,9);
+  }
+
+  &--16-9-all {
+    @include responsive-ratio(16,9);
+  }
+
+  &--4-3-all {
+    @include responsive-ratio(4,3);
+  }
+
+  &--1-1-all {
+    @include responsive-ratio(1,1);
+  }
+
+  img,
+  iframe,
+  embed,
+  object,
+  video {
+    @extend %img-fit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    transition: all $base-animation;
+  }
+}
+
+.responsive-media__placeholder {
+  filter: blur(4rem);
+  transform: scale(1);
+  z-index: 1;
+
+  ~ img {
+    opacity: 0;
+
+    &.is-loaded {
+      opacity: 1;
+    }
+
+    a:hover & {
+      transform: scale(1.1);
+    }
+  }
+}

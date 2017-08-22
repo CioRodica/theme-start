@@ -1,0 +1,156 @@
+.global__header-wrap {
+  &.is-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1041;
+  }
+}
+
+.global__header {
+  background-color: $header-background;
+  width: 100%;
+}
+
+.global__header-inner {
+  @extend %container;
+  @extend %flex-row;
+}
+
+// ============================
+.region--brand {
+  margin-right: $base-spacing;
+}
+
+.region--header {
+  flex-grow: 1;
+
+  .region__inner {
+    @include flex-row;
+    flex-wrap: wrap;
+
+    @include mappy-bp(max-width small) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+// ============================
+.menu--main,
+.menu--account {
+  flex-wrap: wrap;
+
+  > li {
+    @include mappy-bp(max-width small) {
+      @include flex-width();
+    }
+  }
+}
+
+.menu--main {
+  > li {
+    @include mappy-bp(small) {
+      padding-top: $small-spacing;
+      padding-bottom: $small-spacing;
+    }
+  }
+}
+
+.menu--level-1 {
+  li {
+    &:hover > .menu--level-2 {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+}
+
+// Sub-menu.
+.menu--level-2,
+.menu--level-3 {
+  flex-wrap: wrap;
+
+  li {
+    @include flex-width();
+    white-space: nowrap;
+  }
+}
+
+.menu--level-2 {
+  @include mappy-bp(small) {
+    @include dropdown;
+    padding-left: ($small-spacing / 2);
+    padding-right: ($small-spacing / 2);
+  }
+}
+
+.menu--level-3 {
+  display: block;
+
+  > li {
+    padding-left: $small-spacing;
+  }
+}
+
+// ============================
+.site-branding {
+  padding: $small-spacing 0;
+
+  &__logo {
+    display: block;
+    width: 6rem;
+    height: 2rem;
+    margin-right: auto;
+  }
+}
+
+// ============================
+.site-icon {
+  display: inline-block;
+  margin-left: $small-spacing;
+  padding: $small-spacing 0;
+}
+
+// ============================
+.site-navigation-wrap {
+  position: relative;
+  order: 1;
+
+  @include mappy-bp(small) {
+    order: 0;
+    margin-left: 0;
+    margin-right: auto;
+
+    .site-icon {
+      display: none;
+    }
+  }
+}
+
+.site-navigation {
+  @include mappy-bp(max-width small) {
+    @include dropdown;
+    right: 0;
+  }
+}
+
+// ============================
+.site-search-wrap {
+  position: relative;
+}
+
+.site-search {
+  @include dropdown;
+  right: 0;
+}
+
+// ============================
+.account-navigation-wrap {
+  @extend .site-search-wrap;
+}
+
+.account-navigation {
+  @extend .site-search;
+}

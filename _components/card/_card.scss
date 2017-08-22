@@ -1,0 +1,44 @@
+// Card
+//
+// Markup: _card.twig
+//
+// Style guide: Patterns.Card
+
+.card {
+  @extend %flex-column;
+  margin-bottom: $small-spacing;
+}
+
+.card__image {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.card__content {
+  @extend %flex-column;
+  padding: $small-spacing;
+  background-color: $secondary-background;
+}
+
+.card__header {
+  margin-bottom: $small-spacing;
+}
+
+.card__title {
+  @include heading-regular;
+  font-size: $base-font-size;
+}
+
+.card__meta {
+
+}
+
+.card__teaser {
+  flex-grow: 1;
+}
+
+.card__social-links {
+  @extend %inline-list;
+  margin-top: $small-spacing;
+  justify-content: space-between;
+}

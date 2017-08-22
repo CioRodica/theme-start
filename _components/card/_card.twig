@@ -1,0 +1,80 @@
+{#
+/**
+ * @file
+ * Card component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - tag: string.
+ * - head: raw.
+ * - body: raw.
+ * - social_links: object.
+ *   - title: string.
+ *   - url: string.
+ */
+#}
+
+{% if kss_styles %}
+  {% import '../_macros.twig' as macros %}
+
+  <style>
+    #kssref-patterns-card .card {
+      width: 25%;
+    }
+  </style>
+{% else %}
+  {{ attach_library('kickstart/animate') }}
+  {% import '@styleguide/_macros.twig' as macros %}
+{% endif %}
+
+{% spaceless %}
+  <{{ tag|default('article') }} data-animated="flipInX" class="animated card {{ modifier_class }}"{{ attributes }}>
+
+    {% if image %}
+      <div class="card__image">
+        {{ image }}
+      </div>
+    {% endif %}
+
+    <div class="card__content">
+      <div class="card__header">
+        {% if title %}
+          <div class="card__title">
+            {{ title }}
+          </div>
+        {% endif %}
+
+        {% if meta %}
+          <div class="card__meta">
+            {{ meta }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if teaser %}
+        <div class="card__teaser">
+          {{ teaser }}
+        </div>
+      {% endif %}
+
+      {% if social_links %}
+        <ul class="card__social-links">
+          {% for item in social_links %}
+            <li class="social-link social-link__{{ item.title }}">
+              {% set icon %}
+                <span class="icon">
+                  {{ macros.svg('icon__' ~ item.title, kss_styles) }}
+                </span>
+                {{ item.title }}
+              {% endset %}
+
+              {{ link(icon, item.url)|raw }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+  </{{ tag }}>
+{% endspaceless %}

@@ -1,0 +1,64 @@
+{#
+/**
+ * @file
+ * Flex example.
+ */
+#}
+
+{% if kss_styles %}
+  <style>
+    #kssref-patterns-flex {
+    }
+  </style>
+{% endif %}
+
+{% set lorem = "Bits 'n bobs squiffy morris dancers real ale Geordie on the pull fried toast alright geezer therewith." %}
+
+<div class="grid grid--gutter grid--col-1@xsmall grid--col-2@small">
+  <div class="grid__col">
+    <div class="kss-modifier__default-name kss-style">.flex</div>
+    <div class="kss-modifier__example">
+
+      <!-- copy this -->
+      <div class="flex">
+        <div class="0">
+          {{ lorem|truncate(40) }}
+        </div>
+        <div class="0">
+          {{ lorem }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="kss-modifier__default-name kss-style">.flex--fit</div>
+    <div class="kss-modifier__example">
+
+      <!-- copy this -->
+      <div class="flex flex--fit">
+        <div class="0">
+          {{ lorem|truncate(10) }}
+        </div>
+        <div class="0">
+          {{ lorem }}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="kss-modifier__default-name kss-style">.flex__item-grow</div>
+    <div class="kss-modifier__example">
+
+      <!-- copy this -->
+      <div class="flex">
+        <div class="flex__item-grow">
+          {{ lorem|truncate(40) }}
+        </div>
+        <div class="0">
+          {{ lorem }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

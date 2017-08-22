@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * Icons example.
+ */
+#}
+
+{% if kss_styles %}
+  {% import '../_macros.twig' as macros %}
+{% else %}
+  {% import '@styleguide/_macros.twig' as macros %}
+{% endif %}
+
+{% set
+  icons = {
+    'icon__delete': 'Delete',
+    'icon__calendar': 'Calendar',
+  }
+%}
+
+<ul class="inline-list">
+  {% for icon, title in icons %}
+    <li class="0">
+      <a href="javascript:;">
+
+        <!-- copy this -->
+        <span class="icon">
+          {{ macros.svg(icon, kss_styles) }}
+        </span>
+
+        {{ title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

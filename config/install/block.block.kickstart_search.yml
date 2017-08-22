@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - kickstart
+_core:
+  default_config_hash: _O1uaQ0Rz0QoadqelFrvNJ3ut0OFp2BcmYCgq25ckJg
+id: kickstart_search
+theme: kickstart
+region: header
+weight: -4
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: '0'
+visibility: {  }

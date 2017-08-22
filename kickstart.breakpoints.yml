@@ -1,0 +1,35 @@
+kickstart.xsmall:
+  label: xsmall
+  mediaQuery: '(min-width: 0em)'
+  weight: 0
+  multipliers:
+    - 1x
+    - 1.5x
+kickstart.small:
+  label: small
+  mediaQuery: '(min-width: 40em)'
+  weight: 1
+  multipliers:
+    - 1x
+    - 1.5x
+kickstart.medium:
+  label: medium
+  mediaQuery: '(min-width: 64em)'
+  weight: 2
+  multipliers:
+    - 1x
+    - 1.5x
+kickstart.large:
+  label: large
+  mediaQuery: '(min-width: 90em)'
+  weight: 3
+  multipliers:
+    - 1x
+    - 1.5x
+kickstart.xlarge:
+  label: xlarge
+  mediaQuery: '(min-width: 120em)'
+  weight: 4
+  multipliers:
+    - 1x
+    - 1.5x

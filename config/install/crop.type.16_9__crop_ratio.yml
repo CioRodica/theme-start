@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+label: '(16:9) Crop ratio'
+id: 16_9__crop_ratio
+description: ''
+aspect_ratio: '16:9'
+soft_limit_width: 3840
+soft_limit_height: 2160
+hard_limit_width: null
+hard_limit_height: null

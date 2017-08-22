@@ -1,0 +1,59 @@
+// Leadership
+//
+// Markup: _leadership.twig
+//
+// Style guide: Components.Leadership
+
+.leadership {
+  @extend %flex-column;
+  position: relative;
+  background: $white;
+  text-align: center;
+}
+
+.leadership__image {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0 auto;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 100rem;
+  overflow: hidden;
+}
+
+.leadership__content {
+  @extend %flex-column;
+}
+
+.leadership__header {
+  margin-top: $base-spacing;
+}
+
+.leadership__name {
+  @include heading-regular;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.leadership__position {
+  @include heading-regular;
+}
+
+.leadership__body {
+  display: none;
+  flex-grow: 1;
+}
+
+.leadership__read-more {
+  margin-top: $base-spacing;
+}
+
+.leadership--large {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: $large-spacing;
+
+  .leadership__body {
+    display: block;
+  }
+}

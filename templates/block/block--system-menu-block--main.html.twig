@@ -1,0 +1,20 @@
+{#
+/**
+ * @file
+ * Theme override for a menu block.
+ */
+#}
+
+{% import '@styleguide/_macros.twig' as macros %}
+
+<div{{ attributes.addClass('site-navigation-wrap js-dropdown') }}>
+  <a class="site-icon js-dropdown-button"
+     href="javascript:;" role="button" aria-haspopup="true">
+    <span class="site-icon__on icon icon--dropdown-on">{{ macros.svg('icon__menu') }}</span>
+    <span class="site-icon__off icon icon--dropdown-off">{{ macros.svg('icon__delete') }}</span>
+  </a>
+
+  <nav class="site-navigation js-site-navigation" role="navigation" aria-hidden="true">
+    {{ content }}
+  </nav>
+</div>

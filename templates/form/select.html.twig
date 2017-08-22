@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for a select element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the <select> tag.
+ * - options: The <option> element children.
+ *
+ * @see template_preprocess_select()
+ */
+#}
+{% spaceless %}
+<div class="form-select-wrapper">
+  {% include '@classy/form/select.html.twig' %}
+</div>
+{% endspaceless %}

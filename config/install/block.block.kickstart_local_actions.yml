@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - kickstart
+_core:
+  default_config_hash: l9734tqhUCQbBZm0oghAw5O5TGk7snsCOhp-OYKSWh0
+id: kickstart_local_actions
+theme: kickstart
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

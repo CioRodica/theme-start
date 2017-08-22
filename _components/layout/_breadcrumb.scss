@@ -1,0 +1,27 @@
+.breadcrumb {
+  margin: $base-spacing 0;
+}
+
+.breadcrumb__list {
+  @extend %inline-list;
+
+  li {
+    a {
+      color: $breadcrumb-color;
+
+      &:hover {
+        color: $breadcrumb-color-hover;
+      }
+    }
+
+    span {
+      color:$breadcrumb-color-active;
+    }
+
+    ~ li:before {
+      content: "/";
+      float: left;
+      margin-right: $small-spacing;
+    }
+  }
+}

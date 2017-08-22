@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Twig component.
+ */
+#}
+
+{% macro svg(name, kss_styles) %}
+  {% if kss_styles|default(false) %}
+    {% include '../svg/' ~ name ~ '.svg' %}
+  {% else %}
+    {% include '@svg/' ~ name ~ '.svg' %}
+  {% endif %}
+{% endmacro %}

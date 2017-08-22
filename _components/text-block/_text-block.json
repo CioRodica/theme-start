@@ -1,0 +1,10 @@
+{
+  "attributes": "",
+  "modifier_class": "",
+  "kss_styles": true,
+  "heading_tag" : "h3",
+  "title": "<div class='head-title'>Text block</div>",
+  "teaser": "<p>Bits 'n bobs squiffy morris dancers real ale Geordie on the pull fried toast alright geezer therewith.</p>",
+  "wysiwyg": "<div class='body'><ul><li>Bits 'n bobs squiffy morris dancers real ale,</li><li>Geordie on the pull fried toast alright geezer therewith.</li></ul></div>",
+  "cta_button": "<a class='button button--primary' href='javascript:;'>Call to action text</a>"
+}

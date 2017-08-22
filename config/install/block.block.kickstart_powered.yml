@@ -1,0 +1,21 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - kickstart
+_core:
+  default_config_hash: Q6JqQg8ojXHIi3G-UcX-2SRP6QJtpNMdIPxQl3rEyuE
+id: kickstart_powered
+theme: kickstart
+region: footer
+weight: -4
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

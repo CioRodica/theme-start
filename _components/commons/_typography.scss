@@ -1,0 +1,150 @@
+// Typography
+//
+// Markup: _typography.twig
+//
+// Style guide: Base.Typography
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+}
+
+a {
+  color: $action-color;
+  text-decoration: none;
+  transition: color $base-animation;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: lighten($action-color, 10%);
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+blockquote {
+  margin: 0;
+  padding: $small-spacing $base-spacing;
+  background-color: $secondary-background;
+}
+
+img,
+picture {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+svg,
+img[src*="svg"] {
+  height: 100%;
+  width: 100%;
+}
+
+// ============================
+.body {
+  margin: 0 auto;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include heading-regular;
+    margin: $base-spacing 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  @include mappy-bp(medium) {
+    h1 {
+      font-size: 3.2rem;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    h3 {
+      font-size: 2.4rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+    }
+
+    h5 {
+      font-size: 1.6rem;
+    }
+
+    h6 {
+      font-size: 1.2rem;
+    }
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    @include mappy-bp(medium) {
+      font-size: 1.6rem;
+    }
+  }
+
+  p,
+  blockquote {
+    margin-bottom: $base-spacing;
+  }
+
+  ul {
+    @extend %default-ul;
+  }
+
+  ol {
+    @extend %default-ol;
+  }
+}

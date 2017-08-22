@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - kickstart
+_core:
+  default_config_hash: RXDdEwnrAVf0228v2Z4HWFvMfAJIn9ccqGir1roNF7s
+id: kickstart_account_menu
+theme: kickstart
+region: header
+weight: -5
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+visibility: {  }

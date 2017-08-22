@@ -1,0 +1,93 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the FFW theme.
+ */
+
+use Drupal\Core\Url;
+
+//kint_require();
+//Kint::$maxLevels = 6;
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function kickstart_page_attachments_alter(&$page) {
+  // Force IE to use Chrome Frame if installed.
+  $chrome_frame = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+    'http-equiv' => 'X-UA-Compatible',
+    'content' => 'IE=edge, Chrome=1',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$chrome_frame, 'chrome_frame'];
+
+  // Remove image toolbar in IE.
+  $ie_image_toolbar = [
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => [
+      'http-equiv' => 'ImageToolbar',
+      'content' => 'false',
+    ],
+  ];
+  $page['#attached']['html_head'][] = [$ie_image_toolbar, 'ie_image_toolbar'];
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kickstart_form_alter(&$form, &$form_state, $form_id = NULL) {
+  // Mark the submit action as the primary action, when it appears.
+  if(empty($form['actions']['submit']['#button_type'])) {
+    $form['actions']['submit']['#button_type'] = 'primary';
+  }
+
+  if(isset($form['basic'])) {
+    unset(
+      $form['basic']['#attributes']['class'],
+      $form['help_link']
+    );
+
+    // Mark the submit action as the primary action, when it appears.
+    if(empty($form['basic']['submit']['#button_type'])) {
+      $form['basic']['submit']['#button_type'] = 'primary';
+    }
+  }
+}
+
+/**
+ * Show cookie bar.
+ *
+ * Implements hook_preprocess_page().
+ */
+function kickstart_preprocess_page(&$variables) {
+  // Show cookie bar.
+  if (!isset($_COOKIE['cookiebar'])) {
+    $cookie_message = [
+      '#markup' => theme_get_setting('cookiebar.message.value'),
+    ];
+
+    $variables['#attached']['library'][] = 'kickstart/cookiebar';
+    drupal_set_message($cookie_message, 'cookiebar');
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph().
+ */
+function kickstart_preprocess_paragraph__grid(&$variables) {
+  // Columns style
+  $columns = $variables['content']['field_grid_style'][0]["#markup"];
+  $variables['content']['field_grid_items']['#options']['columns'] = $columns;
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function kickstart_preprocess_field__paragraph__grid(&$variables, $hook) {
+  $variables['options']['columns'] = $variables['element']['#options']['columns'];
+}

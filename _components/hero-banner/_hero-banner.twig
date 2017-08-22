@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Hero banner component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - image: raw.
+ * - video: raw.
+ * - heading_tag: string.
+ * - head_title: string.
+ * - body: raw.
+ */
+#}
+
+{% if kss_styles %}
+  {% import '../_macros.twig' as macros %}
+
+  <style>
+    #kssref-components-hero-banner {
+    }
+  </style>
+{% else %}
+  {% import '@styleguide/_macros.twig' as macros %}
+{% endif %}
+
+{% spaceless %}
+  <div class="hero-banner {{ modifier_class }}"{{ attributes }}>
+    {% if image %}
+      <div class="hero-banner__image">
+        {{ image }}
+      </div>
+    {% elseif video %}
+      <div class="hero-banner__video">
+        {{ video }}
+      </div>
+    {% endif %}
+
+    <div class="hero-banner__content">
+      <{{ heading_tag }} class="hero-banner__title">
+        {{ title }}
+      </{{ heading_tag }}>
+
+      {% if body %}
+        <div class="hero-banner__teaser">
+          {{ body }}
+        </div>
+      {% endif %}
+
+      {% if cta_button %}
+        <div class="hero-banner__cta-button">
+          {{ cta_button }}
+        </div>
+      {% endif %}
+
+      {% if play_button %}
+        {% set icon_play %}
+          <span class="icon">
+            {{ macros.svg('icon__' ~ play_button.icon, kss_styles) }}
+          </span>
+          {{ 'Play'|t }}
+        {% endset %}
+
+        <div class="hero-banner__play-button">
+          {{ link(icon_play, play_button.url)|raw }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endspaceless %}

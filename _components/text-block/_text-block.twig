@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Text Block w/ CTA button component.
+ *
+ * Available variables:
+ * - attributes: raw.
+ * - modifier_class: string.
+ * - heading_tag: string.
+ * - head_title: raw.
+ * - body: raw.
+ */
+#}
+
+{% if kss_styles %}
+  <style>
+    #kssref-components-text-block {
+    }
+  </style>
+{% endif %}
+
+{% spaceless %}
+<div class="text-block {{ modifier_class|length ? 'text-block--' ~ modifier_class }}"{{ attributes }}>
+  <div class="text-block__inner">
+    {% if title %}
+      <{{ heading_tag }} class="text-block__title">
+        {{ title }}
+      </{{ heading_tag }}>
+    {% endif %}
+
+    {% if body %}
+      <div class="text-block__teaser">
+        {{ body }}
+      </div>
+    {% endif %}
+
+    {% if wysiwyg %}
+      <div class="text-block__teaser">
+        {{ wysiwyg }}
+      </div>
+    {% endif %}
+
+    {% if cta_button %}
+      <div class="text-block__cta-button">
+        {{ cta_button }}
+      </div>
+    {% endif %}
+
+    {% if more_button %}
+      <div class="text-block__more-button">
+        {{ more_button }}
+      </div>
+    {% endif %}
+
+    {% if video_url %}
+      <div class="text-block__cta-button">
+        {{ link(video_button_text ?: 'Watch the video', video_button_url, { 'class':['js-mfp-video', 'button']} ) }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endspaceless %}

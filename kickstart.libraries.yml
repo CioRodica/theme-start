@@ -1,0 +1,68 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/skin-go.css: { minified: true }
+
+global-scripts:
+  version: VERSION
+  js:
+    js/lib/modernizr.min.js: { minified: true }
+    js/lib/enquire.min.js: { minified: true }
+    js/lib/ofi.min.js: { minified: true }
+    js/scripts.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+
+fonts:
+  version: VERSION
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Montserrat:500|Open+Sans:400,400i,700': { type: external }
+
+animate:
+  version: VERSION
+  css:
+    component:
+      '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css': { type: external, minified: true }
+  dependencies:
+    - core/jquery
+    - kickstart/waypoints-sticky
+
+cookiebar:
+  version: VERSION
+  js:
+    js/lib/js.cookie.js: {}
+  dependencies:
+    - core/jquery
+
+magnific:
+  version: VERSION
+  css:
+    component:
+      js/lib/magnific-popup/magnific-popup.css: {}
+  js:
+    js/lib/magnific-popup/jquery.magnific-popup.js: {}
+  dependencies:
+    - core/jquery
+
+slick:
+  version: VERSION
+  css:
+    component:
+      js/lib/slick/slick.css: {}
+  js:
+    js/lib/slick/slick.js: {}
+  dependencies:
+    - core/jquery
+
+waypoints-sticky:
+  version: VERSION
+  js:
+    js/lib/waypoints/jquery.waypoints.js: {}
+    js/lib/waypoints/shortcuts/sticky.js: {}
+  dependencies:
+    - core/jquery
+

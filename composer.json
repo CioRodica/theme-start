@@ -1,0 +1,20 @@
+{
+    "name": "drupal/ffw-kickstart",
+    "type": "drupal-theme",
+    "description": "FFW maintained starter theme.",
+    "keywords": ["Drupal", "Kickstart", "FFW"],
+    "license": "GPL-2.0+",
+    "homepage": "https://ffwagency.com/",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "require": {
+        "drupal/core": "^8.2",
+        "drupal/paragraphs": "^1.1",
+        "drupal/components": "^1.0"
+    }
+}

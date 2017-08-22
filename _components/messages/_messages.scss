@@ -1,0 +1,75 @@
+// Messages
+//
+// .messages--status - Status message.
+// .messages--error - Error message.
+// .messages--notice - Notice message.
+// .messages--warning - Earning message.
+// .messages--cookiebar - Cookiebar message.
+//
+// Markup: _messages.twig
+//
+// Style guide: Components.Messages
+
+@mixin flash($color) {
+  background-color: $color;
+  color: darken($color, 60%);
+
+  a {
+    color: darken($color, 70%);
+    text-decoration: underline;
+
+    &:focus,
+    &:hover {
+      color: darken($color, 90%);
+    }
+  }
+}
+
+.messages {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: $small-spacing;
+  z-index: 1041;
+
+  &--error {
+    @include flash($message-error-color);
+  }
+
+  &--status {
+    @include flash($message-success-color);
+  }
+
+  &--notice {
+    @include flash($message-notice-color);
+  }
+
+  &--warning {
+    @include flash($message-alert-color);
+  }
+
+  &--cookiebar {
+    @include flash($message-notice-color);
+    top: auto;
+    bottom: 0;
+  }
+}
+
+.message__inner {
+  @extend %container;
+}
+
+.messages__list {
+  @extend %default-ul;
+}
+
+.messages__close {
+  text-transform: uppercase;
+
+  .button {
+    padding: .1rem .5rem;
+    font-size: 1rem;
+    letter-spacing: .1rem;
+  }
+}

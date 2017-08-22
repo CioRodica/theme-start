@@ -1,0 +1,19 @@
+// Section
+//
+// Markup: _section.twig
+//
+// Style guide: Components.Section
+
+.section {
+  @extend %full-width;
+}
+
+.section__inner {
+  padding-top: $base-spacing;
+  padding-bottom: $base-spacing;
+
+  @include mappy-bp(medium) {
+    padding-top: $large-spacing;
+    padding-bottom: $large-spacing;
+  }
+}

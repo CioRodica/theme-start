@@ -1,0 +1,15 @@
+.global__content {
+  width: 100%;
+
+  .global__content-inner {
+    @extend %container;
+  }
+}
+
+.block--system-main-block {
+  margin: $base-spacing 0;
+}
+
+.block--local-tasks-block {
+  margin-bottom: $large-spacing;
+}

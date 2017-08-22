@@ -1,0 +1,49 @@
+// Hero banner
+//
+// Markup: _hero-banner.twig
+//
+// Style guide: Components.Hero banner
+
+.hero-banner {
+  position: relative;
+  text-align: center;
+}
+
+.hero-banner__content {
+  max-width: 60rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: $base-spacing;
+  z-index: 10;
+
+  @include mappy-bp(small) {
+    @include absolute-center();
+    color: $white;
+  }
+}
+
+.hero-banner__image,
+.hero-banner__video {
+  picture {
+    &::after {
+      @include absolute-cover();
+      content: '';
+      background: rgba($base-background, .2);
+    }
+  }
+}
+
+.hero-banner__title {
+  @include heading-regular;
+  font-size: 3.3rem;
+}
+
+.hero-banner__teaser {
+  margin-top: $small-spacing;
+}
+
+.hero-banner__cta-button,
+.hero-banner__play-button {
+  margin-top: $base-spacing;
+}
